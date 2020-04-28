@@ -311,10 +311,10 @@ void GazeboMavlinkInterface::Load(physics::ModelPtr _model, sdf::ElementPtr _sdf
     double real_time_update_rate = boost::any_cast<double>(param);
     const int real_time_update_rate_int = static_cast<int>(real_time_update_rate + 0.5);
 
-    if (real_time_update_rate_int % 250 != 0)
+    if (real_time_update_rate_int % 200 != 0)
     {
       gzerr << "real_time_update_rate is " << real_time_update_rate_int
-            << " but needs to be multiple of 250 Hz, aborting.\n";
+            << " but needs to be multiple of 200 Hz, aborting.\n";
       abort();
     }
 
